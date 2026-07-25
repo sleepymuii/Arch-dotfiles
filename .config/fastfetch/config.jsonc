@@ -1,0 +1,75 @@
+//-- fastfetch config --//
+
+{
+  "logo": {
+    "source": "~/.config/fastfetch/pngs/*.png", 
+    "height": 18
+  },
+  "display": {
+    "separator": " : "
+  },
+  "modules": [
+    {
+      "type": "command",
+      "text": "whoami",
+      "key": " ",
+    },
+    {
+      "type": "os",
+      "key": "├ ",
+    },
+    {
+      "type": "shell",
+      "key": "├ ",
+    },
+    {
+      "type": "packages",
+      "key": "└ 󰏖",
+    },
+    "break",
+
+    {
+      "type": "custom",
+      "format": "WM",
+      "key": " ",
+    },
+    {
+      "type": "wm",
+      "key": "├ ",
+    },
+    {
+      "type": "terminal",
+      "key": "└ ",
+    },
+    "break",
+
+
+    {
+      "type": "custom",
+      "format": "PC",
+      "key": " ",
+    },
+    {
+      "type": "cpu",
+      "format": "{1}",
+      "key": "├ ",
+    },
+    {
+      "type": "gpu",
+      "key": "├ 🖥",
+    },
+    {
+      "type": "memory",
+      "key": "├ ",
+    },
+    {
+      "type": "disk",
+      "key": "├ 󰋊",
+    },
+    {
+      "type": "display",
+      "key": "└ 󰹑",
+    },
+    "break"
+      ]
+}

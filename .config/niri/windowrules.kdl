@@ -1,0 +1,11 @@
+//
+// windowrules
+//
+
+window-rule {
+    match app-id=r#"vivaldi$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+
+

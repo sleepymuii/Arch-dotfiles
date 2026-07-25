@@ -1,0 +1,114 @@
+//
+// Binds
+//
+
+binds {
+    	
+    Mod+Shift+Slash { show-hotkey-overlay; }
+    Mod+Tab repeat=false { toggle-overview; }
+    Mod+C repeat=false { close-window; }
+
+    // Open Programms
+    Mod+Q hotkey-overlay-title="Open a Terminal" { spawn "kitty"; }
+    Mod+R hotkey-overlay-title="Run an Application" { spawn-sh "pkill rofi || rofi -show drun"; }
+    Mod+L hotkey-overlay-title="Lock the Screen" { spawn "hyprlock"; }
+    
+    // Open Menus
+    Mod+Shift+P hotkey-overlay-title="open powermenu" {spawn-sh "wlogout -b 4"; }
+    Mod+Shift+N hotkey-overlay-title="open notification center" {spawn-sh "swaync-client -t "; }
+    Mod+Shift+W hotkey-overlay-title="open wallpaper changer" {spawn-sh "~/.config/scripts/wallset"; } 
+    // Control volume
+    XF86AudioRaiseVolume allow-when-locked=false { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
+    XF86AudioLowerVolume allow-when-locked=false { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioMute        allow-when-locked=false { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute     allow-when-locked=false { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    // control Mediaplayer
+    XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
+    XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
+    XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
+
+    // Move Focus
+    Mod+Left  { focus-column-left; }
+    Mod+Down  { focus-window-down; }
+    Mod+Up    { focus-window-up; }
+    Mod+Right { focus-column-right; }
+
+    // Move Columns
+    Mod+Shift+Left  { move-column-left; }
+    Mod+Shift+Down  { move-window-down; }
+    Mod+Shift+Up    { move-window-up; }
+    Mod+Shift+Right { move-column-right; }
+
+    // Move Focus to First or Last column
+    Mod+J { focus-column-first; }
+    Mod+K  { focus-column-last; }
+
+    // Move column to First or Last
+    Mod+Shift+J { move-column-to-first; }
+    Mod+Shift+K  { move-column-to-last; }
+
+    // Move workspaces via Mouse
+    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+
+    // Move workspaces via Index
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+
+    // Move columns to workspaces via Index
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
+
+    Mod+D { switch-preset-column-width; }
+    Mod+A { switch-preset-column-width-back; }
+    Mod+Shift+R { switch-preset-window-height; }
+    Mod+Ctrl+R { reset-window-height; }
+
+    // Fullscreen
+    Mod+F { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+    Mod+Shift+D { expand-column-to-available-width; }
+
+    // Center:%s/\$mainMod/\$mod/gc
+    Mod+S { center-column; }
+    Mod+Shift+S { center-visible-columns; }
+
+    // Width
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+
+    // Height
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+
+    // floating
+    Mod+T { toggle-window-floating; }
+
+    Mod+W { toggle-column-tabbed-display; }
+
+    // Screenshot
+    Mod+Shift+Print { screenshot; }
+    Mod+Print { screenshot-screen; }
+    Mod+Alt+Print { screenshot-window; }
+
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    // Turn off monitors
+    Mod+Shift+O { power-off-monitors; }
+}

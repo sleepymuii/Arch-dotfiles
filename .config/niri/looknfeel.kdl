@@ -1,0 +1,46 @@
+//
+// Look & Feel
+//
+
+include "colors.kdl"
+
+layout {
+    gaps 20
+    center-focused-column "never"
+    default-column-width { proportion 0.5; }
+    always-center-single-column
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+        focus-ring {
+        width 2
+    }
+
+    shadow {
+        on
+        draw-behind-window true
+        softness 30
+        spread 5
+        offset x=0 y=5
+    }
+    background-color "transparent"
+}
+
+prefer-no-csd
+
+animations {
+     slowdown 1.35
+}
+
+layer-rule {
+    match namespace="awww-daemon"
+    place-within-backdrop true
+}
+
+layer-rule {
+  match namespace="awww"
+}
+

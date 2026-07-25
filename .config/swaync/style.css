@@ -1,0 +1,5 @@
+/* swaync colors  */
+
+@import '../../.config/swaync/colors.css';
+@import 'themes/control_center.css';
+@import 'themes/notifications.css';

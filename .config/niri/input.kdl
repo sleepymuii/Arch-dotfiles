@@ -1,0 +1,30 @@
+//
+// Input
+//
+
+input {
+    keyboard {
+        xkb {
+	layout "us"
+        }
+        numlock
+    }
+
+    mouse {
+         accel-speed -0.3
+         accel-profile "flat"
+    }
+
+    // disabled the playstation controller touchpad seen as a seprate device
+    touchpad{
+      off
+    }
+
+    // Uncomment this to make the mouse warp to the center of newly focused windows.
+     warp-mouse-to-focus
+
+    // Focus windows and outputs automatically when moving the mouse into them.
+    // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
+    focus-follows-mouse max-scroll-amount="0%"
+}
+

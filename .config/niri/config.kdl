@@ -1,0 +1,68 @@
+//
+// Niri Config
+//
+
+//
+// Startup
+//
+
+spawn-at-startup "swaync"
+spawn-at-startup "quickshell"
+spawn-at-startup "awww-daemon"
+spawn-at-startup "xwayland-satellite"
+
+
+
+//
+// Monitors
+// 
+
+output "DP-3" {
+    mode "2560x1440@359.999"
+    scale 1
+    transform "normal"
+    position x=0 y=0
+
+    hot-corners {
+        off
+    }
+}
+
+
+
+//
+// Misc
+//
+
+screenshot-path "~/Pictures/screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+//
+// Input
+//
+
+include "input.kdl"
+
+
+
+//
+// Look & Feel
+//
+
+include "looknfeel.kdl"
+
+
+//
+// Windowrules
+//
+
+include "windowrules.kdl"
+
+//
+// Binds
+//
+
+include "binds.kdl"

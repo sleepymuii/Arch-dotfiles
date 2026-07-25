@@ -1,0 +1,32 @@
+format = '''
+$os$directory $git_branch $character
+'''
+
+palette = 'colors'
+
+[palettes.colors]
+color1 = '#cebdfe'
+color2 = '#35275d'
+color3 = '#cac4cf'
+color4 = '#211f24'
+color5 = '#35275d'
+color6 = '#141218'
+color7 = '#141218'
+color8 = '#cebdfe'
+color9 = '#efb8c9'
+
+# Prompt symbols 
+[character]
+success_symbol = "[>](color9 bold)"
+error_symbol = "[>](@{error})"
+vicmd_symbol = "[>](#f9e2af)"
+
+[os]
+disabled = false
+format = "[󰣇 ](fg:color1) "
+
+[directory]
+format = "[$path](fg:color1)"
+
+[git_branch]
+format = "[ ](fg:color1)[$branch](fg:color3)"
