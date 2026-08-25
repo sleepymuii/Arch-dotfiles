@@ -14,20 +14,30 @@ binds {
     Mod+L hotkey-overlay-title="Lock the Screen" { spawn "hyprlock"; }
     
     // Open Menus
-    Mod+Shift+P hotkey-overlay-title="open powermenu" {spawn-sh "wlogout -b 4"; }
+    Mod+Shift+P hotkey-overlay-title="open power menu" {spawn-sh "wlogout -b 4 -T 500 -B 500"; }
     Mod+Shift+N hotkey-overlay-title="open notification center" {spawn-sh "swaync-client -t "; }
-    Mod+Shift+W hotkey-overlay-title="open wallpaper changer" {spawn-sh "~/.config/scripts/wallset"; } 
+    Mod+Shift+W hotkey-overlay-title="open wallpaper changer" {spawn-sh "~/.config/scripts/wallset"; }
+    Mod+V hotkey-overlay-title="open clipboard" {spawn-sh "cliphist list | rofi -dmenu | cliphist decode | wl-copy"; }
+
     // Control volume
-    XF86AudioRaiseVolume allow-when-locked=false { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
-    XF86AudioLowerVolume allow-when-locked=false { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    XF86AudioMute        allow-when-locked=false { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute     allow-when-locked=false { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+//    XF86AudioRaiseVolume allow-when-locked=false { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
+//    XF86AudioLowerVolume allow-when-locked=false { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+//    XF86AudioMute        allow-when-locked=false { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+//    XF86AudioMicMute     allow-when-locked=false { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    // Control volume swayosd
+    XF86AudioRaiseVolume allow-when-locked=false { spawn-sh "swayosd-client --output-volume 5"; }
+    XF86AudioLowerVolume allow-when-locked=false { spawn-sh "swayosd-client --output-volume -5"; }
+    XF86AudioMute        allow-when-locked=false { spawn-sh "swayosd-client --output-volume mute-toggle"; }
+    XF86AudioMicMute     allow-when-locked=false { spawn-sh "swayosd-client --input-volume mute-toggle"; }
 
     // control Mediaplayer
-    XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+//    XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
     XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
     XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
-    XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
+//    XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
+    XF86AudioPlay        allow-when-locked=true { spawn-sh "swayosd-client --playerctl play-pause"; }
+    XF86AudioNext        allow-when-locked=true { spawn-sh "swayosd-client --playerctl next"; }
 
     // Move Focus
     Mod+Left  { focus-column-left; }

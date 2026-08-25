@@ -2,3 +2,4 @@
 .config/waybar
 .config/hypr/hyprland.lua
 .config/hypr/configs
+.config/quickshell/quotes.txt

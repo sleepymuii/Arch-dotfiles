@@ -5,7 +5,7 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi: "window,run,drun";
+	modi: "run,drun";
 	display-drun: "Applications";
 	display-window: "Windows";
 	display-run: "Run";
@@ -29,7 +29,7 @@ window {
     /* properties for all widgets */
     enabled:                     true;
     border:			 2px solid;
-    border-color:		 @secondary-container;
+    border-color:		             @secondary-container;
     border-radius:               15px;
     cursor:                      "default";
     background-color:            @on-primary-fixed;
@@ -49,17 +49,16 @@ imagebox {
     padding:                     20px;
     background-color:            transparent;
     width:			 650px;
-    /* change path to another image if you want to show another image other than the Wallpaper */
     background-image:            url("~/.cache/wallpaper/currentWallpaper.png", height); 
     orientation:                 vertical;
     children:                    [ "inputbar", "dummy", "mode-switcher" ];
 }
 
 listbox {
-    expand:			 false;
+    expand:			                 false;
     spacing:                     20px;
     padding:                     20px;
-    width:			 350px;
+    width:			                 350px;
     background-color:            transparent;
     orientation:                 vertical;
     children:                    [ "message", "listview" ];
@@ -75,8 +74,8 @@ inputbar {
     spacing:                     10px;
     padding:                     15px;
     border-radius:               10px;
-    background-color:		 @on-primary;
-    text-color:			 @on-surface;
+    background-color:		         @on-primary;
+    text-color:			             @on-surface;
     children:                    [ "textbox-prompt-colon", "entry" ];
 }
 textbox-prompt-colon {

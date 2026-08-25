@@ -14,7 +14,7 @@ IFS=$'\n'
 # Grab the user-selected wallpaper
 SELECTED_WALL=$(for a in *.png; do
   echo -en "$a\0icon\x1f$a\n"
-done | rofi -dmenu -p "")
+done | rofi -dmenu -theme ~/.config/rofi/ww.rasi -p "")
 
 # If not empty, pass to walset-backend
 if [ -n "$SELECTED_WALL" ]; then

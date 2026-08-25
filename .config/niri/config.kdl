@@ -10,8 +10,11 @@ spawn-at-startup "swaync"
 spawn-at-startup "quickshell"
 spawn-at-startup "awww-daemon"
 spawn-at-startup "xwayland-satellite"
-
-
+spawn-at-startup "hypridle"
+spawn-at-startup "swayosd-server"
+spawn-at-startup "waybar"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+spawn-at-startup "sh" "-c" "cliphist wipe"
 
 //
 // Monitors
@@ -28,8 +31,6 @@ output "DP-3" {
     }
 }
 
-
-
 //
 // Misc
 //
@@ -39,6 +40,8 @@ screenshot-path "~/Pictures/screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 hotkey-overlay {
     skip-at-startup
 }
+
+prefer-no-csd
 
 //
 // Input

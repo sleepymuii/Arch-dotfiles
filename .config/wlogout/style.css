@@ -7,7 +7,7 @@
 @import '../../.config/wlogout/colors.css';
 
 window {
-    background-color: rgba(17, 17, 17, 0.45)
+    background-color: rgba(0, 0, 0, 0)    
 }
 
 button {

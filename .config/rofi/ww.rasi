@@ -1,0 +1,90 @@
+/* Wallpaper selector Config */
+@import "colors.rasi"
+
+configuration {
+    show-icons:                 true;
+    hover-select:               true;
+    kb-accept-entry:            "Return,space";
+    kb-cancel:                  "Escape";
+}
+
+window {
+    location:                   center;
+    anchor:                     center;
+    // width:                      1100px;      /* Keeps the window wide as seen in your image */
+    // height:                     300px;       /* Height of the overall container */
+    spacing:                    10px;
+    transparency: "real";
+
+    background-color:           @on-primary-fixed; 
+    border:                     3px;
+    border-color:               @secondary-container;
+    border-radius:              20px;
+}
+
+mainbox {
+    padding:                    20px;
+    children:                   [inputbar,listview];
+    background-color:           transparent;
+}
+
+inputbar {
+    enabled:                      false;
+    text-color:                   @on-surface;
+    background-color:             transparent;
+    padding:                      5px;
+    margin:                       10px;
+    children:                     [ "entry" ];
+}
+
+entry {
+    enabled:                      true;
+    text-color:                   inherit;
+    background-color:             transparent;
+}
+
+listview {
+
+    enabled:                     true;
+    columns:                     5;
+    lines:                       1;
+    // padding:                      20px;
+    cycle:                       true;
+    dynamic:                     true;
+    layout:                      vertical; /* Vertical arrangement */
+    scrollbar:                   false;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    spacing:                     20px;
+    background-color:            transparent;
+}
+
+element {
+    orientation:                vertical;
+    border-radius:              12px;
+    
+    padding:                    10px;
+    padding:                    10px;
+    border:                     3px;
+    border-color:               transparent;
+    background-color:           transparent;
+}
+
+element-icon {
+    size:                       200px; /* Adjust this to make the images larger/smaller */
+    background-color:           transparent;
+    horizontal-align:           0.5;   
+    vertical-align:             0.5;   
+    cursor:                     pointer;
+}
+
+element selected {
+    background-color:           @primary;
+    border-color:               @on-secondary;
+
+}
+
+element-text {
+    enabled:                    false; /* Hide filenames to show only images */
+}

@@ -15,7 +15,7 @@ input {
          accel-profile "flat"
     }
 
-    // disabled the playstation controller touchpad seen as a seprate device
+    // disabled the playstation controller touchpad seen
     touchpad{
       off
     }

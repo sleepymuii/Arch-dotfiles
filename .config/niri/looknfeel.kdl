@@ -29,18 +29,11 @@ layout {
     background-color "transparent"
 }
 
-prefer-no-csd
-
 animations {
      slowdown 1.35
 }
 
-layer-rule {
-    match namespace="awww-daemon"
-    place-within-backdrop true
-}
-
-layer-rule {
-  match namespace="awww"
+overview {
+  zoom 0.35
 }
 

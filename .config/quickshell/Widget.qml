@@ -5,7 +5,9 @@ import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
 import "." as Local
+
 ShellRoot{
+
   Variants{
     model: Quickshell.screens
 
@@ -74,9 +76,23 @@ ShellRoot{
             top: parent.top
             topMargin: 200
           }
+
+          
+  Process {
+    id: quoteProcess
+    command: ["/usr/bin/shuf", "-n", "1", "/home/mui/.config/quickshell/quotes.txt"]
+
+    stdout: StdioCollector {
+      onStreamFinished: quoteText.text = text.trim()
+    }
+
+    Component.onCompleted: running = true
+  }
+
           Text{
-            text: '"i hope peace"'
-            color:"#ffb3b0"
+            id : quoteText
+            text: ''
+            color: Local.Colors.md3.tertiary
             font.family: "Glirock"
             font.pixelSize:90
           }
