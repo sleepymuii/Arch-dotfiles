@@ -1,0 +1,38 @@
+{
+    "modules-left": ["niri/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "pulseaudio","mpris"],
+
+    "niri/workspaces": {
+      "format": "{index}",
+      "current-only": false,
+      "disable-click": true,
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip": false,
+    },
+
+    "tray": {
+      "icon-size": 15,
+      "spacing" : 2,
+    },
+
+    "pulseaudio": {
+        "format": "vol {volume}%",
+        "on-click": "pavucontrol"
+    },
+
+    "mpris": {
+        "format": "{player_icon} {title} - {artist}",
+        "format-paused": "{status_icon} <i>{title} - {artist}</i>",
+        "max-length": 40,
+        "player-icons": {
+            "default": "⏸"
+        },
+        "status-icons": {
+            "paused": "▶",
+        },
+    },
+}

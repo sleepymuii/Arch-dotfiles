@@ -1,0 +1,59 @@
+/* waybar */
+
+@import "colors.css";
+
+/* Global Styles */
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    border-radius: 2px;
+    min-height: 0;
+    padding: 0px 3px 0;
+    background-color: transparent;
+}
+
+window,
+tooltip {
+    background-color: @background;
+}
+
+#waybar {
+    background: alpha(#000000, 1.0);
+    border-radius: 0;
+}
+
+#workspaces button {
+    color: @primary;
+}
+
+#workspaces button:hover {
+    box-shadow: none; /* Remove predefined box-shadow */
+    text-shadow: none; /* Remove predefined text-shadow */
+    background: none; /* Remove predefined background color (white) */
+    transition: none; /* Disable predefined animations */
+    border: none;
+}
+
+#workspaces button.focused {
+    color: @primary;
+    border-bottom: 2px solid @primary; 
+}
+
+/* MPRIS / Music widget */
+#mpris {
+   background: transparent;
+   color: @primary;
+}
+
+/* Clock */
+#clock {
+   color: @primary;
+}
+
+#pulseaudio {
+   color: @primary;
+   margin-right: 15px;
+}

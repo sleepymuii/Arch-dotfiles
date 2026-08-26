@@ -41,7 +41,7 @@ window#osd segment.active {
     min-height: 6px;
     border-radius: 999px;
     border: none;
-    background: @on_primary;
+    background: @primary;
 }
 
 window#osd segment {
