@@ -22,7 +22,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="Vivaldi-stable"
+    match app-id="vivaldi-stable"
     open-on-workspace "2"
     open-maximized true
 }
